@@ -30,20 +30,22 @@ public class PlusMinus {
     	double countIntegers = 0;
     	double countNegatives = 0;
     	double countZeros = 0;
-    	double size = arr.size();
+    	BigDecimal size =  new BigDecimal(arr.size());
     	
     	countIntegers = arr.stream().filter(value -> value > 0).count();
     	countNegatives = arr.stream().filter(value -> value < 0).count();
     	countZeros = arr.stream().filter(value -> value == 0).count();
     	
     	// decimal(2, 6) =  00.000000 
-    	double proportionIntegers	= countIntegers / size;
-    	double proportionNegatives	= countNegatives / size;
-    	double proportionZeros		= countZeros / size;
-     
-    	System.out.printf("%.6f\n", proportionIntegers);
-        System.out.printf("%.6f\n", proportionNegatives);
-        System.out.printf("%.6f\n", proportionZeros);
+    	// Cálculo das proporções
+        BigDecimal proportionIntegers = new BigDecimal(countIntegers).divide(size, 6, RoundingMode.HALF_UP);
+        BigDecimal proportionNegatives = new BigDecimal(countNegatives).divide(size, 6, RoundingMode.HALF_UP);
+        BigDecimal proportionZeros = new BigDecimal(countZeros).divide(size, 6, RoundingMode.HALF_UP);
+
+        // Formatação e exibição das proporções com 6 casas decimais
+        System.out.println(proportionIntegers.setScale(6, RoundingMode.HALF_UP));
+        System.out.println(proportionNegatives.setScale(6, RoundingMode.HALF_UP));
+        System.out.println(proportionZeros.setScale(6, RoundingMode.HALF_UP));
     }
     
 
