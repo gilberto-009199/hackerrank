@@ -14,7 +14,7 @@ import java.util.stream.*;
 import static java.util.stream.Collectors.joining;
 import static java.util.stream.Collectors.toList;
 
-# https://www.hackerrank.com/challenges/diagonal-difference/problem
+// https://www.hackerrank.com/challenges/diagonal-difference/problem
 
 public class DiagonalDifference {
 
