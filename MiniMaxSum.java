@@ -15,6 +15,8 @@ import static java.util.stream.Collectors.toList;
 
 import static java.lang.System.out;
 
+// https://www.hackerrank.com/challenges/mini-max-sum/problem
+
 public class MiniMaxSum {
 
     /*
