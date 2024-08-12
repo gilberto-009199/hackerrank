@@ -1,0 +1,36 @@
+package algoritm;
+
+import java.io.*;
+import java.util.*;
+
+// https://www.hackerrank.com/challenges/java-static-initializer-block/problem?isFullScreen=true
+public class JavaStaticInitializer {
+
+    public static void main(String[] args) {
+        var reader = new Scanner(System.in);
+        var height = reader.nextInt();
+        var width  = reader.nextInt();
+        
+        try { 
+            // Call calcPalindrom(height, width)
+            int result = calcPalindrom(height, width);
+            // Print the result
+            System.out.println(result);
+        } catch(Exception e) {
+            System.out.println(e);
+        }
+    }
+    
+    public static int calcPalindrom(int height, int width) throws Exception {
+        
+        boolean positiveAndMayorZero = height > 0 && width > 0;
+        
+        if (!positiveAndMayorZero) {
+            throw new Exception("Breadth and height must be positive");
+        }
+        
+        // Calculate the palindrome or some value
+        // Example: Just for demonstration, return the product of height and width
+        return height * width;
+    }
+}
